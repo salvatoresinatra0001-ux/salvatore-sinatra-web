@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://salvatoresinatra0001-ux.github.io/salvatore-sinatra-web/sitemap.xml
