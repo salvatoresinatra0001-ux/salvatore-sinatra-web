@@ -1,45 +1,65 @@
 {
-  "version": "2.1.0",
+  "version": "3.0.0",
   "name": "Salvatore Sinatra",
-  "architecture": "two-pillar",
-  "pillars": [
+  "repository": "salvatoresinatra0001-ux/salvatore-sinatra-web",
+  "deployment": {
+    "provider": "GitHub Pages",
+    "branch": "main",
+    "artifactPath": "docs",
+    "source": "GitHub Actions",
+    "baseUrl": "https://salvatoresinatra0001-ux.github.io/salvatore-sinatra-web/"
+  },
+  "architecture": "two-portfolios-one-repository",
+  "portfolios": [
     {
-      "id": "photography",
-      "title": "Photography & Visual Arts",
-      "path": "/",
+      "id": "identity",
+      "title": "Portfolio Identitario",
+      "path": "/identity/",
+      "sourceProjects": [
+        "Salvatore Sinatra — Fotografia & Arti Visive",
+        "Digital Identity Atlas"
+      ],
       "sections": [
-        "portfolio",
-        "collections",
-        "editorial",
-        "services"
+        "biography",
+        "education",
+        "research",
+        "lucevision",
+        "digital-identity"
       ]
     },
     {
-      "id": "identity",
-      "title": "Identity, LuceVision & Research",
-      "path": "/identity/",
+      "id": "professional",
+      "title": "Portfolio Curriculare Professionale Fotografico Artistico Visivo",
+      "path": "/professional/",
       "sections": [
-        "lucevision",
-        "academic",
-        "professional",
-        "creative-technology",
-        "identity-atlas"
+        "professional-profile",
+        "photographic-disciplines",
+        "fine-art-collections",
+        "technical-skills",
+        "education",
+        "contact"
       ]
     }
   ],
-  "existingRoutes": [
+  "routes": [
     "/",
+    "/identity/",
+    "/professional/",
+    "/academic/",
     "/lucevision/",
-    "/identity-atlas/",
-    "/academic/"
+    "/identity-atlas/"
   ],
   "collections": [
     "NOIRVEIL — Echoes in Monochrome",
     "STILL ECHOES",
     "TRUE MONOCHROME"
   ],
-  "publicSocial": {
+  "officialPublicProfiles": {
     "instagram": "https://www.instagram.com/salvatoresinatraofficial/"
   },
-  "status": "preconfiguration; source Sites assets pending"
+  "migration": {
+    "sitesAssets": "pending export",
+    "originalPhotography": "pending approved files"
+  },
+  "privacy": "public professional information only"
 }
