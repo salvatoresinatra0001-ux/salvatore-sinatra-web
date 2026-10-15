@@ -23,13 +23,39 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for file in docs/index.html docs/identity/index.html docs/professional/index.html docs/assets/portfolio-system.css docs/sitemap.xml docs/robots.txt docs/.nojekyll; do
+          for file in docs/index.html docs/identity/index.html docs/professional/index.html docs/academic/index.html docs/lucevision/index.html docs/identity-atlas/index.html docs/assets/portfolio-system.css docs/assets/identity-config.json docs/sitemap.xml docs/robots.txt docs/.nojekyll; do
             test -f "$file" || { echo "::error::Missing $file"; exit 1; }
           done
           python3 -m json.tool docs/assets/identity-config.json >/dev/null
           python3 - <<'PY'
           import xml.etree.ElementTree as ET
           ET.parse('docs/sitemap.xml')
+          import json
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import urlsplit, unquote
+          root=Path('docs')
+          config=json.loads((root/'assets/identity-config.json').read_text())
+          expected={'/identity/','/professional/'}
+          actual={p['path'] for p in config['portfolios']}
+          assert actual==expected, f'Portfolio routes mismatch: {actual}'
+          class Links(HTMLParser):
+              def __init__(self): super().__init__(); self.links=[]
+              def handle_starttag(self,tag,attrs):
+                  if tag in ('a','link','script','img'):
+                      d=dict(attrs)
+                      for key in ('href','src'):
+                          if key in d: self.links.append(d[key])
+          failures=[]
+          for page in root.rglob('*.html'):
+              parser=Links(); parser.feed(page.read_text(encoding='utf-8'))
+              for link in parser.links:
+                  parts=urlsplit(link)
+                  if parts.scheme or link.startswith(('//','#','mailto:','tel:','data:')): continue
+                  dest=(page.parent/unquote(parts.path)).resolve()
+                  if dest.is_dir(): dest=dest/'index.html'
+                  if not dest.is_file(): failures.append(f'{page}: {link}')
+          if failures: raise SystemExit('Broken internal links:\\n'+'\\n'.join(failures))
           print('Identity and professional portfolio checks passed')
           PY
   deploy:
