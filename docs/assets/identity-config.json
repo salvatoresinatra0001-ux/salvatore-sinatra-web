@@ -1,0 +1,45 @@
+{
+  "version": "2.1.0",
+  "name": "Salvatore Sinatra",
+  "architecture": "two-pillar",
+  "pillars": [
+    {
+      "id": "photography",
+      "title": "Photography & Visual Arts",
+      "path": "/",
+      "sections": [
+        "portfolio",
+        "collections",
+        "editorial",
+        "services"
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "Identity, LuceVision & Research",
+      "path": "/identity/",
+      "sections": [
+        "lucevision",
+        "academic",
+        "professional",
+        "creative-technology",
+        "identity-atlas"
+      ]
+    }
+  ],
+  "existingRoutes": [
+    "/",
+    "/lucevision/",
+    "/identity-atlas/",
+    "/academic/"
+  ],
+  "collections": [
+    "NOIRVEIL — Echoes in Monochrome",
+    "STILL ECHOES",
+    "TRUE MONOCHROME"
+  ],
+  "publicSocial": {
+    "instagram": "https://www.instagram.com/salvatoresinatraofficial/"
+  },
+  "status": "preconfiguration; source Sites assets pending"
+}
