@@ -10,7 +10,7 @@ Applicare uno standard SEO tecnico, editoriale e di controllo ripetibile a siti 
 ## File di sistema
 
 - `seo-sites.json`: inventario dei target, repository e directory pubblicate da esaminare.
-- `seo_audit.py`: scanner statico senza dipendenze esterne per HTML, metadati e sitemap.
+- `scripts/seo_audit.py`: scanner statico senza dipendenze esterne per HTML, metadati e sitemap.
 - `.github/workflows/seo-audit.yml`: scansione pianificata e su modifica del framework.
 - `seo-sites.json` è descrittivo: un dominio indicato come candidato non è una certificazione di DNS, HTTPS, proprietà o indicizzazione.
 
@@ -83,13 +83,13 @@ Per ogni dominio verificato: Google Search Console, sitemap inviata, pagine indi
 Da una copia del repository:
 
 ```bash
-python3 seo_audit.py --root docs
+python3 scripts/seo_audit.py --root docs
 ```
 
 Per fare il check anche sui riferimenti locali:
 
 ```bash
-python3 seo_audit.py --root docs --check-links
+python3 scripts/seo_audit.py --root docs --check-links
 ```
 
 Usare la directory di pubblicazione reale come `--root`. Per i progetti che costruiscono `dist/`, eseguire prima la build e poi analizzare `dist/`. La scansione statica non controlla richieste HTTP esterne, DNS, certificati, dati di Search Console o Core Web Vitals reali.
