@@ -98,7 +98,7 @@ jobs:
                       f.write(f"- Inventory status: `{site.get('status', 'not specified')}`\n\n")
 
               command = [
-                  sys.executable, "seo_audit.py",
+                  sys.executable, "scripts/seo_audit.py",
                   "--root", str(root),
                   "--robots", site.get("robots", "robots.txt"),
                   "--sitemap", site.get("sitemap", "sitemap.xml")
