@@ -1,64 +1,59 @@
-# Salvatore Sinatra — Web & Identità Visiva
+# Salvatore Sinatra — Web Identity 2.0
 
-**Fotografia · Arti visive · Direzione creativa · Archivio digitale indipendente**
+**Fotografia · Arti visive · Direzione creativa · Formazione · Creative Technology · Digital Identity Atlas**
 
-Repository pubblico dei progetti identitari di **Salvatore Sinatra**, fotografo freelance e artista visivo con base a Caltagirone, Sicilia.
+Repository editoriale multipagina di Salvatore Sinatra. I contenuti originali e le loro eventuali riproduzioni rimangono tutelati dalle rispettive condizioni di copyright.
 
-> «Non cerco immagini perfette: cerco immagini con presenza. Ogni fotografia è una scelta.»
+## Architettura del progetto
 
-## Progetti caricati
-
-| Progetto | Codice GitHub | Sito originale su ChatGPT Sites |
+| Sezione | Percorso | Funzione |
 | --- | --- | --- |
-| **Fotografia & Arti Visive** | [docs/index.html](docs/index.html) | [Portfolio originale](https://salvatore-sinatra.free-trail-0346.chatgpt.site) |
-| **Salvatore Sinatra LuceVision** | [docs/lucevision/](docs/lucevision/) | [LuceVision originale](https://salvatore-sinatra-lucevision.free-trail-0346.chatgpt.site) |
-| **Digital Identity Atlas** | [docs/identity-atlas/](docs/identity-atlas/) | [Atlante originale](https://salvatore-sinatra-identity-atlas.free-trail-0346.chatgpt.site) |
+| Home | `docs/index.html` | Identità generale e portale editoriale |
+| Profilo | `docs/identity/` | Biografia e formazione |
+| Portfolio fotografico | `docs/professional/` | Linguaggio e attività fotografiche |
+| Formazione | `docs/academic/` | Studi e interessi interdisciplinari |
+| LuceVision | `docs/lucevision/` | Ricerca visiva e direzione creativa |
+| Visual Arts | `docs/visual-arts/` | Disegno, grafica d'arte, opere |
+| Creative Technology | `docs/creative-technology/` | Web, design, imaging e processi |
+| Digital Identity Atlas | `docs/identity-atlas/` | Profilo interdisciplinare e directory |
+| Site Tree | `docs/site-tree/` | Mappa interattiva ricercabile e filtrabile |
 
-I tre progetti sono organizzati in un'unica **edizione statica GitHub**, realizzata in HTML e CSS senza dipendenze esterne. Il layout responsive è condiviso e ogni progetto possiede una propria pagina.
+## Design system
 
-**Importante:** questo è un primo adattamento editoriale basato sui contenuti pubblicamente disponibili dei siti originali. Non è un'esportazione integrale dei progetti Sites: fotografie originali, font proprietari, loghi e sorgenti applicativi non erano disponibili per la migrazione. I siti originali restano autonomi e non vengono alterati.
+Le pagine costruite con il layout editoriale condiviso utilizzano:
+- `docs/assets/style.css` — base originale e layout responsive;
+- `docs/assets/identity-v2.css` — componenti, griglie e temi monocromatici;
+- `docs/assets/identity-v2.js` — selezione tema persistente e accessibile;
+- `docs/assets/portfolio-system.css` — stile dedicato delle pagine portfolio esistenti.
 
-## Struttura
+Il progetto non usa framework JavaScript o dipendenze di build. Sono rispettate le preferenze di movimento ridotto e la navigazione da tastiera. Alcune pagine storiche mantengono un'identità stilistica dedicata.
 
-```text
-docs/
-├── index.html                   # Fotografia & Arti Visive
-├── assets/
-│   └── style.css                # Stile editoriale responsive
-├── lucevision/
-│   └── index.html               # LuceVision
-└── identity-atlas/
-    └── index.html               # Digital Identity Atlas
-```
+## Pubblicazione GitHub e Netlify
 
-## Pubblicare su GitHub Pages
+**Branch sorgente:** `main`  
+**Directory pubblica:** `docs`  
+**Comando build:** nessuno.
 
-1. Aprire **Settings → Pages** di questo repository.
-2. In **Build and deployment**, scegliere **Deploy from a branch**.
-3. Selezionare **main** e **/docs**; salvare.
-4. Attendere la conferma del deployment nella sezione Pages/Actions.
+Netlify Preview: https://salvatoresinatra-atlas-preview.netlify.app/
 
-Quando GitHub Pages sarà attivo, gli indirizzi previsti saranno:
+La configurazione è dichiarata nel file `netlify.toml` alla radice. Ogni commit destinato alla pubblicazione deve essere verificato sia sul repository sia sul deploy corrente; il semplice push non prova che il sito pubblico sia stato aggiornato.
 
-- [Fotografia & Arti Visive](https://salvatoresinatra0001-ux.github.io/salvatore-sinatra-web/)
-- [LuceVision](https://salvatoresinatra0001-ux.github.io/salvatore-sinatra-web/lucevision/)
-- [Digital Identity Atlas](https://salvatoresinatra0001-ux.github.io/salvatore-sinatra-web/identity-atlas/)
+GitHub Pages (se abilitato nelle impostazioni del repository): usare `main` → `/docs`. Gli indirizzi GitHub Pages non vengono descritti come attivi senza verifica.
 
-**Gli URL sono previsti e non attestano l'avvenuta attivazione di Pages.** Un eventuale dominio personalizzato richiede verifiche DNS e una configurazione separata.
+## Rigore editoriale
 
-## Principi
+- Fotografie autentiche, opere d'arte e immagini sintetiche devono essere distinguibili.
+- Non si usano fotografie AI come riproduzioni documentarie di opere reali.
+- Titoli accademici, riconoscimenti e periodi formativi non documentati non vengono presentati come certificati.
+- Un dominio o progetto in preparazione non va etichettato come sito online verificato.
+- Per le schede delle opere sono richiesti provenienza, tecnica, dimensioni, data e fotografia dell'originale quando disponibili.
 
-- Preservazione dell'identità delle fotografie originali, senza modifiche arbitrarie.
-- Comunicazione visiva chiara, linguaggio editoriale essenziale e accessibilità.
-- Trasparenza tra progetti originali su Sites ed edizioni adattate per GitHub.
-- Pubblicazione esclusiva di riferimenti identitari destinati all'uso pubblico.
-- Copyright e attribuzioni pertinenti a immagini, testi, marchi e codice.
+## Progetti originali su Sites
 
-## Collegamenti
+Questa edizione è un adattamento editoriale statico e non un'esportazione integrale dei sorgenti o delle gallerie originali.
 
-- [Instagram ufficiale — @salvatoresinatraofficial](https://www.instagram.com/salvatoresinatraofficial/)
-- [Profilo GitHub](https://github.com/salvatoresinatra0001-ux)
+- Fotografia & Arti Visive: https://salvatore-sinatra.free-trail-0346.chatgpt.site
+- LuceVision: https://salvatore-sinatra-lucevision.free-trail-0346.chatgpt.site
+- Digital Identity Atlas: https://salvatore-sinatra-identity-atlas.free-trail-0346.chatgpt.site
 
----
-
-© 2026 **Salvatore Sinatra**. Tutti i diritti riservati sui contenuti e sulle opere originali, salvo diversa indicazione. La presenza di file in un repository pubblico non attribuisce automaticamente permessi di riutilizzo delle fotografie.
+© 2026 Salvatore Sinatra. Tutti i diritti riservati sulle opere originali salvo diversa indicazione.
