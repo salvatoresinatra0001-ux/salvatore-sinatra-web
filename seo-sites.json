@@ -193,6 +193,103 @@
       "status": "profile_not_website",
       "audit": false,
       "note": "Not a conventional HTML website. Review README identity links and profile metadata separately; don't run a page SEO audit."
+    },
+    {
+      "name": "Sandra Music Italia — Netlify property",
+      "repository": "salvatoresinatra0001-ux/music-archives-italia",
+      "ref": "main",
+      "publish_root": "sandra-music-italia",
+      "robots": "robots.txt",
+      "sitemap": "sitemap.xml",
+      "public_url": "https://www.sandra-music-italia.it/",
+      "canonical_candidate": null,
+      "status": "candidate_source_mapping_unconfirmed",
+      "audit": false,
+      "note": "A same-named folder exists in music-archives-italia, but the actual repository/base-directory attached to this Netlify property is not verified; map it in Netlify before scanning this root as production."
+    },
+    {
+      "name": "Salvatore Sinatra — Fine Art Authorial / portfolio Netlify",
+      "repository": null,
+      "ref": null,
+      "publish_root": null,
+      "robots": null,
+      "sitemap": null,
+      "public_url": "http://salvatoresinatra-portfolio.it",
+      "alternate_observed_urls": [
+        "https://www.salvatoresinatra-portfolio.it/"
+      ],
+      "canonical_candidate": null,
+      "status": "deployment_source_unmapped",
+      "audit": false,
+      "note": "Netlify reports the project salvatore-sinatra-fine-art-authorial and branch deployment netlify-portfolio-v10-1; this branch name was not found in the mapped GitHub repo branch search. Resolve the connected repository/ref and HTTPS/www preference before source-level audit."
+    },
+    {
+      "name": "Salvatore Sinatra Atlas Preview — Netlify",
+      "repository": null,
+      "ref": null,
+      "publish_root": null,
+      "robots": null,
+      "sitemap": null,
+      "public_url": "http://salvatoresinatra-atlas-preview.netlify.app",
+      "alternate_observed_urls": [
+        "http://main--salvatoresinatra-atlas-preview.netlify.app"
+      ],
+      "canonical_candidate": null,
+      "status": "preview_source_unmapped",
+      "audit": false,
+      "note": "Preview/non-production property; verify that visitor access protection blocks public indexing and that preview URLs are absent from production sitemap. Do not publish it as a canonical host."
+    },
+    {
+      "name": "Salvatore Sinatra Artista — Netlify",
+      "repository": null,
+      "ref": null,
+      "publish_root": null,
+      "robots": null,
+      "sitemap": null,
+      "public_url": "https://salvatoresinatra-artista.eu",
+      "canonical_candidate": null,
+      "status": "deployment_source_unmapped",
+      "audit": false,
+      "note": "Netlify property visible in the connected account; identify its GitHub source/ref and editorial role before scanning or changing SEO."
+    },
+    {
+      "name": "Alizée Moilolita Italia — Netlify",
+      "repository": null,
+      "ref": null,
+      "publish_root": null,
+      "robots": null,
+      "sitemap": null,
+      "public_url": "https://www.alizee-moilolita.it",
+      "canonical_candidate": null,
+      "status": "deployment_source_unmapped",
+      "audit": false,
+      "note": "Netlify property visible in the connected account; no matching repository was found in the accessible repository inventory. Source mapping is required."
+    },
+    {
+      "name": "Salvatore Sinatra Photography .net — Netlify",
+      "repository": null,
+      "ref": null,
+      "publish_root": null,
+      "robots": null,
+      "sitemap": null,
+      "public_url": "https://www.salvatoresinatraphotography.net",
+      "canonical_candidate": null,
+      "status": "deployment_source_unmapped",
+      "audit": false,
+      "note": "Separate Netlify property from the .it and .online photography domains. Identify source/ref and decide if this is an intentional independent site or a duplicate deployment."
+    },
+    {
+      "name": "Salvatore Sinatra Photography .online — Netlify",
+      "repository": null,
+      "ref": null,
+      "publish_root": null,
+      "robots": null,
+      "sitemap": null,
+      "public_url": "https://www.salvatoresinatraphotography.online",
+      "canonical_candidate": null,
+      "status": "deployment_source_unmapped",
+      "audit": false,
+      "note": "Separate Netlify property. Identify source/ref and intended role relative to .it and .net before aligning canonicals or redirects."
     }
   ]
 }
