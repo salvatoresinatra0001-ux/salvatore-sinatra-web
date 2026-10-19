@@ -8,7 +8,7 @@ import os
 import re
 import sys
 import xml.etree.ElementTree as ET
-from collections import Counter
+from collections import Counter, defaultdict
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -285,8 +285,33 @@ def main() -> int:
     if not (root / "index.html").is_file():
         add_issue(issues, "WARN", "index.html", "No index.html at the configured root; verify the selected publish directory.")
 
+    title_paths: dict[str, list[str]] = defaultdict(list)
+    description_paths: dict[str, list[str]] = defaultdict(list)
+    canonical_paths: dict[str, list[str]] = defaultdict(list)
+
     for page in pages:
         check_page(root, page, issues, args.check_links)
+        parser = PageParser()
+        parser.feed(page.read_text(encoding="utf-8", errors="replace"))
+        parser.close()
+        rel = page.relative_to(root).as_posix()
+        if parser.title:
+            title_paths[parser.title.casefold()].append(rel)
+        if parser.description:
+            description_paths[re.sub(r"\\s+", " ", parser.description).strip().casefold()].append(rel)
+        for canonical in set(parser.canonicals):
+            canonical_paths[canonical].append(rel)
+
+    for title, paths in title_paths.items():
+        if len(paths) > 1:
+            add_issue(issues, "WARN", "site-wide", f"Duplicate title used by {len(paths)} pages: {title!r} — " + ", ".join(paths[:8]))
+    for description, paths in description_paths.items():
+        if len(paths) > 1:
+            add_issue(issues, "INFO", "site-wide", f"Duplicate meta description used by {len(paths)} pages — " + ", ".join(paths[:8]))
+    for canonical, paths in canonical_paths.items():
+        if len(paths) > 1:
+            add_issue(issues, "WARN", "site-wide", f"Same canonical URL appears on {len(paths)} pages: {canonical!r} — " + ", ".join(paths[:8]))
+
     check_robots(root, args.robots, args.sitemap, issues)
     sitemap_urls = check_sitemap(root, args.sitemap, issues)
 
