@@ -1,0 +1,122 @@
+name: SEO Master Audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - "SEO-MASTER-SYSTEM.md"
+      - "seo-sites.json"
+      - "seo_audit.py"
+      - ".github/workflows/seo-audit.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-master-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    name: Audit configured public site repositories
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout SEO control repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Clone and audit configured repositories
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import subprocess
+          import sys
+          import tempfile
+          from pathlib import Path
+
+          config = json.loads(Path("seo-sites.json").read_text(encoding="utf-8"))
+          targets = [site for site in config["sites"] if site.get("audit", False)]
+          work_root = Path(tempfile.mkdtemp(prefix="seo-master-"))
+          failures = []
+
+          print(f"Configured targets: {len(targets)}")
+          print(f"Mode: {config.get('policy', {}).get('mode', 'audit_only')}")
+
+          for site in targets:
+              name = site["name"]
+              repository = site["repository"]
+              ref = site.get("ref", "main")
+              publish_root = site.get("publish_root", ".")
+              checkout_dir = work_root / repository.replace("/", "__")
+              summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+
+              print("\n" + "=" * 80)
+              print(f"TARGET: {name} — {repository}@{ref}")
+              print(f"Configured URL: {site.get('public_url') or 'UNCONFIRMED'}")
+              print(f"Configured publish root: {publish_root}")
+
+              clone = subprocess.run(
+                  ["git", "clone", "--quiet", "--depth", "1", "--branch", ref,
+                   f"https://github.com/{repository}.git", str(checkout_dir)],
+                  text=True, capture_output=True
+              )
+              if clone.returncode != 0:
+                  message = clone.stderr.strip() or "git clone failed"
+                  print(f"ERROR cloning {repository}: {message}")
+                  failures.append(f"{repository}: clone failed")
+                  if summary_path:
+                      with open(summary_path, "a", encoding="utf-8") as f:
+                          f.write(f"\n### {name}\n\n**Status:** repository clone failed.\n\n")
+                  continue
+
+              root = (checkout_dir / publish_root).resolve()
+              if not root.is_dir():
+                  print(f"ERROR: configured publish root does not exist: {root}")
+                  failures.append(f"{repository}: publish root missing")
+                  if summary_path:
+                      with open(summary_path, "a", encoding="utf-8") as f:
+                          f.write(f"\n### {name}\n\n**Status:** configured publish root `{publish_root}` not found.\n\n")
+                  continue
+
+              if summary_path:
+                  with open(summary_path, "a", encoding="utf-8") as f:
+                      f.write(f"\n### {name}\n\n")
+                      f.write(f"- Repository: [`{repository}`](https://github.com/{repository})\n")
+                      f.write(f"- Ref: `{ref}`\n- Root scanned: `{publish_root}`\n")
+                      f.write(f"- Configured public URL: {site.get('public_url') or 'not confirmed'}\n")
+                      f.write(f"- Inventory status: `{site.get('status', 'not specified')}`\n\n")
+
+              command = [
+                  sys.executable, "seo_audit.py",
+                  "--root", str(root),
+                  "--robots", site.get("robots", "robots.txt"),
+                  "--sitemap", site.get("sitemap", "sitemap.xml")
+              ]
+              result = subprocess.run(command, text=True, capture_output=True, env=os.environ.copy())
+              print(result.stdout)
+              if result.stderr:
+                  print(result.stderr, file=sys.stderr)
+              if result.returncode != 0:
+                  failures.append(f"{repository}: audit process exited {result.returncode}")
+
+          print("\n" + "=" * 80)
+          print(f"SEO audit finished for {len(targets)} targets.")
+          if failures:
+              print("Operational issues:")
+              for failure in failures:
+                  print(f" - {failure}")
+              # Findings are reports, not automatic blocking failures; operational clone/root errors are reported.
+              if os.environ.get("SEO_AUDIT_FAIL_ON_OPERATIONAL_ERRORS") == "1":
+                  raise SystemExit(1)
+          PY
