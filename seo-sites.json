@@ -303,7 +303,26 @@
       "canonical_candidate": null,
       "status": "custom_domain_not_connected",
       "audit": false,
-      "note": "Webflow account inventory confirms one site and two pages: the homepage is published; /home-v2-editoriale is a draft. The site has no custom domain configured. Page SEO titles/descriptions are present; homepage Open Graph image is unset. Review domain strategy and social image before publication."
+      "note": "Webflow account inventory confirms one site and two pages: the homepage is published; /home-v2-editoriale is a draft. The site has no custom domain configured. Page SEO titles/descriptions are present; homepage Open Graph image is unset. Review domain strategy and social image before publication.",
+      "platform_site_id": "6ad5ef78bdb517791905f96e",
+      "pages": [
+        {
+          "id": "6ad5ef7abdb517791905f975",
+          "path": "/",
+          "state": "published",
+          "seo_title_present": true,
+          "meta_description_present": true,
+          "og_image_present": false
+        },
+        {
+          "id": "6ad60710213d2fa56e279f9b",
+          "path": "/home-v2-editoriale",
+          "state": "draft",
+          "seo_title_present": true,
+          "meta_description_present": true,
+          "og_image_present": true
+        }
+      ]
     }
   ]
 }
