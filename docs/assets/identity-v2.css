@@ -46,3 +46,13 @@ body[data-theme="light"] .site-header{background:var(--bg)}
   .global-explore-inner{align-items:flex-start}
 }
 @media(prefers-reduced-motion:reduce){body{transition:none}}
+
+/* Portfolio legacy-page compatibility */
+body[data-theme="light"]{--muted:#50504b}
+body[data-theme="dark"]{--muted:#b8b7b3}
+body[data-theme="light"] .card,body[data-theme="light"] .links a,body[data-theme="light"] .tag{border-color:var(--line)}
+body[data-theme="light"] a:hover{color:var(--fg)}
+body[data-theme="light"] .action:hover{color:#fff}
+body[data-theme="light"] .theme-toggle:hover{color:var(--fg)}
+body[data-theme="light"] nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-underline-offset:5px}
+body[data-theme="light"] a:focus-visible,body[data-theme="light"] button:focus-visible{outline-color:var(--fg)}
