@@ -79,7 +79,7 @@ class PageParser(HTMLParser):
             for key in ("href", "src", "poster"):
                 if a.get(key):
                     self.local_refs.append(a[key])
-        elif tag == "script" and a.get("type", "").lower() == "application/ld+json":
+        if tag == "script" and a.get("type", "").lower() == "application/ld+json":
             self._in_jsonld = True
             self._jsonld_parts = []
 
