@@ -33,6 +33,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Test audit scanner
+        run: python3 -m unittest scripts.test_seo_audit
+
       - name: Clone and audit configured repositories
         env:
           PYTHONUTF8: "1"
