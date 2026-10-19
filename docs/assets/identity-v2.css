@@ -1,0 +1,48 @@
+
+/* Salvatore Sinatra — Identity Web System 2.0 / additive layer */
+:root{--identity-gap:clamp(24px,4vw,60px)}
+html{scroll-padding-top:24px}
+body{transition:background-color .24s ease,color .24s ease}
+body[data-theme="light"]{--bg:#f3f3ef;--panel:#fff;--line:#c9c9c4;--fg:#191919;--mute:#4b4b49;--soft:#676762;color-scheme:light}
+body[data-theme="dark"]{--bg:#080808;--panel:#141414;--line:#333;--fg:#f4f3ef;--mute:#b8b7b3;--soft:#999792;color-scheme:dark}
+body[data-theme="light"] .panel{border-color:var(--line)}
+body[data-theme="light"] .nav a[aria-current=page],body[data-theme="light"] .nav a:hover,body[data-theme="light"] a:hover{color:var(--fg)}
+body[data-theme="light"] .action{background:#161616;color:#fff}
+body[data-theme="light"] .action-secondary{background:transparent;color:var(--fg);border-color:#777}
+body[data-theme="light"] .action-secondary:hover{background:#161616;color:#fff}
+body[data-theme="light"] .wordmark{color:var(--fg)}
+body[data-theme="light"] .site-header{background:var(--bg)}
+.site-header{position:relative;z-index:10}
+.theme-toggle{background:transparent;color:var(--fg);border:1px solid var(--line);padding:9px 13px;border-radius:0;font:inherit;font-size:.75rem;letter-spacing:.09em;white-space:nowrap;cursor:pointer}
+.theme-toggle:hover{border-color:var(--mute)}
+.nav a{text-decoration:none}
+.nav a:hover{text-decoration:underline;text-underline-offset:.55em}
+.identity-eyebrow{font-size:.73rem;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);font-weight:650}
+.identity-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
+.identity-feature{grid-column:span 6;padding:clamp(24px,3vw,42px);border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;align-items:flex-start;min-height:240px}
+.identity-feature:nth-child(3n){grid-column:span 12}
+.identity-feature h3{font-size:clamp(1.5rem,2.8vw,2.6rem);letter-spacing:-.035em;margin:14px 0}
+.identity-feature p{margin:0 0 auto;max-width:56ch;color:var(--mute)}
+.identity-feature a{margin-top:28px;font-size:.87rem;font-weight:600;text-underline-offset:5px}
+.identity-index{display:flex;justify-content:space-between;gap:15px;width:100%;font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;color:var(--soft)}
+.identity-rule{height:1px;background:var(--line);margin:30px 0}
+.identity-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:var(--identity-gap)}
+.identity-split p{margin-top:0}
+.identity-statement{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.55rem,3vw,3.2rem);font-style:italic;line-height:1.3;max-width:34ch}
+.identity-pill{display:inline-block;border:1px solid var(--line);padding:4px 10px;margin:4px 6px 4px 0;color:var(--mute);font-size:.76rem}
+.identity-figure{min-height:210px;border:1px solid var(--line);padding:clamp(24px,4vw,50px);display:flex;flex-direction:column;justify-content:space-between;background:var(--panel)}
+.identity-figure .large{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.7rem,8vw,7rem);line-height:1;letter-spacing:-.07em}
+.identity-figure small{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--soft)}
+.identity-notice{border-left:2px solid var(--fg);padding:12px 20px;color:var(--mute);font-size:.9rem}
+.global-explore{border-top:1px solid var(--line);padding:24px 0;background:var(--bg)}
+.global-explore-inner{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px}
+.global-explore strong{font-size:.73rem;letter-spacing:.12em;text-transform:uppercase;margin-right:auto}
+.global-explore a{font-size:.78rem;color:var(--mute);text-decoration:none}
+.global-explore a:hover{color:var(--fg);text-decoration:underline}
+@media(max-width:760px){
+  .identity-grid{grid-template-columns:1fr}
+  .identity-feature,.identity-feature:nth-child(3n){grid-column:span 1;min-height:0}
+  .identity-split{grid-template-columns:1fr}
+  .global-explore-inner{align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){body{transition:none}}
