@@ -38,7 +38,7 @@ Le seguenti proprietà Netlify sono presenti nell'account collegato, ma non sono
 - `www.alizee-moilolita.it`.
 - `www.sandra-music-italia.it`: esiste una cartella con nome corrispondente in `music-archives-italia`, ma non è ancora provato che sia la base directory collegata al progetto Netlify.
 
-Il sistema contiene quindi **21 record inventariati**, di cui **13 root di sorgente sono configurate per l'audit automatico** e **7 proprietà Netlify attendono una verifica di sorgente/ref/base directory**; il record restante è il profilo README GitHub, che non è un sito HTML tradizionale. Una proprietà non ancora mappata non viene dichiarata “SEO verificata”.
+Il sistema contiene quindi **22 record inventariati**: **13 root di sorgente sono configurate per l'audit automatico**, **7 proprietà Netlify attendono una verifica di sorgente/ref/base directory**, **1 record è il profilo README GitHub** (non è un sito HTML tradizionale) e **1 record è il sito Webflow**, inserito nell'inventario ma da controllare tramite le impostazioni native Webflow. Il sito Webflow non ha ancora un dominio personalizzato collegato; la homepage è pubblicata, mentre `/home-v2-editoriale` è una bozza. La homepage ha i campi SEO title/description, ma l'immagine Open Graph non risulta impostata. Una proprietà non ancora mappata non viene dichiarata “SEO verificata”.
 
 ## Risultati preliminari verificati nei sorgenti
 
