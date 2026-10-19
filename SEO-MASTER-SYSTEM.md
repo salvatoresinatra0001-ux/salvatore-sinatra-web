@@ -26,6 +26,20 @@ Il primo inventario distingue:
 
 L'inventario tecnico non equivale alla verifica completa di tutti i domini pubblici. Le proprietà amministrative e i progetti con hosting multiplo devono avere un proprietario, un ruolo editoriale e un dominio canonico approvato.
 
+### Altre proprietà Netlify individuate nel workspace
+
+Le seguenti proprietà Netlify sono presenti nell'account collegato, ma non sono ancora abbinate con certezza al repository e al ref che generano la versione pubblicata. Sono quindi registrate nel file JSON ma non sottoposte a scansione della sorgente finché la mappatura non è verificata:
+
+- Portfolio Netlify `salvatoresinatra-portfolio.it` / progetto `salvatore-sinatra-fine-art-authorial` (dominio riportato da Netlify in HTTP; la variante HTTPS con www va verificata).
+- Preview `salvatoresinatra-atlas-preview.netlify.app`: confermare che l'accesso non pubblico impedisca l'indicizzazione e che il preview non confluisca nelle sitemap di produzione.
+- `salvatoresinatra-artista.eu`.
+- `www.salvatoresinatraphotography.net`.
+- `www.salvatoresinatraphotography.online`.
+- `www.alizee-moilolita.it`.
+- `www.sandra-music-italia.it`: esiste una cartella con nome corrispondente in `music-archives-italia`, ma non è ancora provato che sia la base directory collegata al progetto Netlify.
+
+Il sistema contiene quindi **21 record inventariati**, di cui **13 root di sorgente sono configurate per l'audit automatico** e **7 proprietà Netlify attendono una verifica di sorgente/ref/base directory**; il record restante è il profilo README GitHub, che non è un sito HTML tradizionale. Una proprietà non ancora mappata non viene dichiarata “SEO verificata”.
+
 ## Risultati preliminari verificati nei sorgenti
 
 - `salvatoresinatra/index.html`: title, description, lingua `it`, canonical e markup JSON-LD presenti; sitemap di sole due URL (home e privacy), da confrontare con le pagine effettivamente indicizzabili.
