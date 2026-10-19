@@ -9,7 +9,7 @@ on:
     paths:
       - "SEO-MASTER-SYSTEM.md"
       - "seo-sites.json"
-      - "seo_audit.py"
+      - "scripts/**"
       - ".github/workflows/seo-audit.yml"
 
 permissions:
