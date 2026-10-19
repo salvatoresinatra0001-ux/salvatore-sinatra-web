@@ -298,7 +298,7 @@ def main() -> int:
         if parser.title:
             title_paths[parser.title.casefold()].append(rel)
         if parser.description:
-            description_paths[re.sub(r"\\s+", " ", parser.description).strip().casefold()].append(rel)
+            description_paths[re.sub(r"\s+", " ", parser.description).strip().casefold()].append(rel)
         for canonical in set(parser.canonicals):
             canonical_paths[canonical].append(rel)
 
