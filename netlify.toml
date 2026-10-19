@@ -1,11 +1,21 @@
-# Single source of truth: serve the GitHub repository's /docs directory
+# Staging static portfolio: only the deploy/ folder is published.
 [build]
-  publish = "docs"
+  publish = "deploy"
 
-# Preserve standard HTML/JS delivery without an unnecessary build toolchain.
 [[headers]]
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/script.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
