@@ -1,0 +1,11 @@
+# Single source of truth: serve the GitHub repository's /docs directory
+[build]
+  publish = "docs"
+
+# Preserve standard HTML/JS delivery without an unnecessary build toolchain.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
