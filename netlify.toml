@@ -1,4 +1,4 @@
-# Staging static portfolio: only the deploy/ folder is published.
+# Portfolio statico di produzione: directory deploy pubblicata con pagine indicizzabili.
 [build]
   publish = "deploy"
 
@@ -8,7 +8,6 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    X-Robots-Tag = "noindex, nofollow"
 
 [[headers]]
   for = "/styles.css"
