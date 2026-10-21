@@ -102,3 +102,10 @@ body,.ss-site{background:#000;color:#f5f5f5}
 .ss-reading-progress{position:fixed;top:0;left:0;height:2px;width:0;background:#eee;z-index:100;pointer-events:none}
 .ss-site[data-theme="light"]~.ss-reading-progress{background:#111}
 @media(prefers-reduced-motion:reduce){.ss-site [data-reveal]{opacity:1;transform:none;transition:none}}
+
+/* LOCKED AMOLED BLACK THEME — all pages, regardless of saved preferences */
+:root{color-scheme:dark!important;--paper:#000!important;--ink:#f5f5f5!important;--muted:#a5a5a5!important;--line:#242424!important;--dark:#080808!important;--dark-muted:#bdbdbd!important;--light:#f5f5f5!important;--contact:#080808!important}
+html,body,.ss-site,.ss-site .ss-nav,.ss-site .ss-contact{background:#000!important;color:#f5f5f5!important;color-scheme:dark!important}
+.ss-site .ss-nav{background:rgba(0,0,0,.92)!important;border-color:#242424!important}
+.ss-site .ss-contact{background:#080808!important;border-color:#242424!important}
+.ss-site .ss-nav-link,.ss-site .ss-text-link,.ss-site .ss-contact-link,.ss-site .ss-footer-top{color:#f5f5f5!important}
