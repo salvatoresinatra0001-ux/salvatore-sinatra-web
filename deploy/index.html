@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#efeee9">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#000000">
   <title>Salvatore Sinatra — Fine Art Authorial Photography</title>
   <meta name="description" content="Portfolio fotografico autoriale di Salvatore Sinatra: Fine Art, ritratto, figura, paesaggio, architettura e ricerca visiva dalla Sicilia.">
   <link rel="canonical" href="https://salvatoresinatra-portfolio.it/">
@@ -33,7 +33,7 @@
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
-  <div class="ss-site" id="top">
+  <div class="ss-site" id="top" data-theme="dark">
     <header class="ss-nav">
       <a class="ss-wordmark" href="#top" aria-label="Salvatore Sinatra — torna all'inizio">
         <span class="ss-wordmark-title">SALVATORE SINATRA</span>
@@ -51,6 +51,7 @@
         <a class="ss-nav-link" href="#contact">Contatti</a>
       </nav>
       <span class="ss-location">SICILIA · ITALIA</span>
+      <button class="theme-toggle-site" id="theme-toggle-site" type="button" aria-pressed="false">TEMA: DARK</button>
     </header>
 
     <main id="contenuto">
@@ -158,5 +159,7 @@
     </footer>
   </div>
   <script src="/script.js" defer></script>
-</body>
+<script>
+(()=>{"use strict";const site=document.querySelector(".ss-site"),button=document.getElementById("theme-toggle-site");if(!site||!button)return;let saved=null;try{saved=localStorage.getItem("ss-theme")}catch(e){}function apply(theme,save){site.dataset.theme=theme;button.textContent=theme==="dark"?"TEMA: DARK":"TEMA: LIGHT";button.setAttribute("aria-pressed",String(theme==="light"));document.querySelector('meta[name="theme-color"]').content=theme==="dark"?"#000000":"#efeee9";if(save){try{localStorage.setItem("ss-theme",theme)}catch(e){}}}apply(saved==="light"||saved==="dark"?saved:"dark",false);button.addEventListener("click",()=>apply(site.dataset.theme==="dark"?"light":"dark",true));const targets=[...site.querySelectorAll("main section")];targets.forEach(el=>el.setAttribute("data-reveal",""));if("IntersectionObserver"in window){const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");io.unobserve(entry.target)}}),{threshold:.08});targets.forEach(el=>io.observe(el))}else targets.forEach(el=>el.classList.add("is-visible"));const progress=document.createElement("div");progress.className="ss-reading-progress";progress.setAttribute("aria-hidden","true");document.body.appendChild(progress);function update(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+"%"}addEventListener("scroll",update,{passive:true});update()})();
+</script></body>
 </html>
