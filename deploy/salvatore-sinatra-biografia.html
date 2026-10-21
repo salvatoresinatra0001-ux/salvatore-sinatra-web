@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light">
+<meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#000000">
 <title>Salvatore Sinatra | Biografia, Fotografia Fine Art e Shooting TFP</title>
 <meta name="description" content="Salvatore Sinatra, fotografo freelance indipendente in Sicilia. Biografia, fotografia autoriale Fine Art, ritratti, shooting TFP, progetti ambientati e collaborazioni con modelle maggiorenni.">
@@ -48,15 +48,15 @@
 <style>
 :root{color-scheme:dark;--ink:#f5f5f5;--paper:#000;--panel:#080808;--muted:#a5a5a5;--line:#242424;--white:#fff;--accent:#dedede}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px;background:#000}body{margin:0;background:#000;color:#f5f5f5;font:17px/1.78 Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased;transition:background-color .35s,color .35s}
-body[data-theme="light"]{background:#efeee9;color:#171715;color-scheme:light}
+body[data-theme="light"]{background:#000;color:#f5f5f5;color-scheme:dark}
 a{color:inherit;text-underline-offset:4px}a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
 .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:#fff;color:#000;padding:12px;z-index:20}
 .site-nav{position:sticky;top:0;z-index:10;padding:18px clamp(20px,5vw,72px);border-bottom:1px solid #242424;background:rgba(0,0,0,.88);backdrop-filter:blur(16px);display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;font:500 10px/1.5 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase}
-body[data-theme="light"] .site-nav{background:rgba(239,238,233,.9);border-color:#c9c8c0}
+body[data-theme="light"] .site-nav{background:rgba(0,0,0,.92);border-color:#242424}
 .site-nav a{text-decoration:none}.nav-links{display:flex;gap:20px;flex-wrap:wrap}.brand{font-weight:700;letter-spacing:.18em}
 .theme-toggle{border:1px solid #444;background:transparent;color:inherit;padding:10px 13px;font:600 9px/1.2 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
 main{width:min(1000px,90%);margin:0 auto}.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr);align-items:center;gap:clamp(28px,6vw,76px);padding:clamp(56px,9vw,118px) 0 70px;border-bottom:1px solid #242424}
-body[data-theme="light"] .hero,body[data-theme="light"] section{border-color:#c9c8c0}
+body[data-theme="light"] .hero,body[data-theme="light"] section{border-color:#242424}
 .eyebrow{font:500 10px/1.5 system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#a5a5a5}
 h1,h2,h3{font-weight:400;line-height:1.14;letter-spacing:-.035em}h1{font-size:clamp(42px,7.5vw,82px);margin:20px 0}h2{font-size:clamp(30px,4.6vw,48px);margin:0 0 23px}h3{font-size:23px;margin:32px 0 12px}
 .lead{font-size:clamp(19px,2.2vw,24px);line-height:1.55}.portrait{margin:0}.portrait img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center;border:1px solid #242424;filter:grayscale(100%);transition:filter .4s,transform .6s}.portrait img:hover{filter:grayscale(30%);transform:scale(1.012)}.portrait figcaption{font:10px/1.6 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#a5a5a5;padding-top:10px}
@@ -65,14 +65,16 @@ ul{padding-left:22px;max-width:760px}li{padding:4px 0}.contact{padding:60px 0 78
 footer{padding:24px clamp(20px,5vw,72px);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font:10px/1.6 system-ui,sans-serif;letter-spacing:.1em;color:#a5a5a5}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.is-visible{opacity:1;transform:none}
 .reading-progress{position:fixed;top:0;left:0;height:2px;width:0;background:#eee;z-index:30;transition:width .08s linear}
-body[data-theme="light"] .reading-progress{background:#111}
+body[data-theme="light"] .reading-progress{background:#eee}
 @media(max-width:700px){.hero{grid-template-columns:1fr;padding-top:52px}.portrait{max-width:420px}.nav-links{gap:12px}.site-nav{align-items:flex-start}.theme-toggle{margin-left:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+/* AMOLED BLACK LOCK: ignore light-theme state and system preference */
+:root{color-scheme:dark!important}html,body,body[data-theme="light"],.site-nav,body[data-theme="light"] .site-nav{background:#000!important;color:#f5f5f5!important;color-scheme:dark!important}body[data-theme="light"] .hero,body[data-theme="light"] section{border-color:#242424!important}body[data-theme="light"] .reading-progress{background:#eee!important}
 </style>
 </head>
 <body>
 <a class="skip" href="#contenuto">Salta al contenuto</a>
-<div class="reading-progress" id="reading-progress" aria-hidden="true"></div><header class="site-nav"><a class="brand" href="/" aria-label="Salvatore Sinatra Photography — Home">SALVATORE SINATRA</a><nav class="nav-links" aria-label="Navigazione principale"><a href="/">Portfolio</a><a href="#bio">Biografia</a><a href="#collaborazioni">Collaborazioni</a><a href="#contatti">Contatti</a></nav><button class="theme-toggle" type="button" id="theme-toggle" aria-label="Cambia tema">Tema: Dark</button></header>
+<div class="reading-progress" id="reading-progress" aria-hidden="true"></div><header class="site-nav"><a class="brand" href="/" aria-label="Salvatore Sinatra Photography — Home">SALVATORE SINATRA</a><nav class="nav-links" aria-label="Navigazione principale"><a href="/">Portfolio</a><a href="#bio">Biografia</a><a href="#collaborazioni">Collaborazioni</a><a href="#contatti">Contatti</a></nav></header>
 <main id="contenuto">
 <header class="hero"><div><p class="eyebrow">Fotografia autoriale · Sicilia, Italia</p><h1>Salvatore <em>Sinatra.</em></h1><p class="lead"><em>Fotografo freelance indipendente, Fine Art e ritratto.</em> Immagini costruite attraverso luce, presenza, composizione e relazione con lo spazio.</p><p>Una ricerca visiva aperta a progetti professionali, produzioni editoriali, shooting TFP e collaborazioni creative.</p></div><figure class="portrait"><img src="https://s3.amazonaws.com/webflow-prod-assets/6ad5ef78bdb517791905f96e/6ad608df8f60188a7b360cfa_1000044961.webp" width="500" height="500" alt="Ritratto fotografico di Salvatore Sinatra in bianco e nero" fetchpriority="high"><figcaption>Salvatore Sinatra · Ritratto fotografico</figcaption></figure></header>
 <section id="bio" class="reveal"><p class="section-label">01 / Profilo e biografia</p><h2>La fotografia come linguaggio personale.</h2>
@@ -95,12 +97,8 @@ body[data-theme="light"] .reading-progress{background:#111}
 <footer><span>© 2026 Salvatore Sinatra · Tutti i diritti riservati.</span><a href="/">Torna al portfolio</a></footer>
 <script>
 (()=>{"use strict";
-const root=document.body,button=document.getElementById("theme-toggle"),bar=document.getElementById("reading-progress");
-const stored=(()=>{try{return localStorage.getItem("ss-theme")}catch(e){return null}})();
-const preferred=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
-function setTheme(theme,persist){root.dataset.theme=theme;root.style.colorScheme=theme;button.textContent=theme==="dark"?"Tema: Dark":"Tema: Light";button.setAttribute("aria-pressed",String(theme==="light"));const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==="dark"?"#000000":"#efeee9";if(persist){try{localStorage.setItem("ss-theme",theme)}catch(e){}}}
-setTheme(stored==="light"||stored==="dark"?stored:preferred,false);
-button.addEventListener("click",()=>setTheme(root.dataset.theme==="dark"?"light":"dark",true));
+const root=document.body,bar=document.getElementById("reading-progress");
+root.dataset.theme="dark";root.style.colorScheme="dark";try{localStorage.setItem("ss-theme","dark")}catch(e){}
 const sections=[...document.querySelectorAll("main section")];
 if("IntersectionObserver"in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target)}}),{threshold:.08});sections.forEach(section=>observer.observe(section))}else sections.forEach(section=>section.classList.add("is-visible"));
 function progress(){const max=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+"%"}
