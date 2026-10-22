@@ -1,34 +1,33 @@
-# Salvatore Sinatra — Digital Identity Atlas V500.0
+# Salvatore Sinatra — Digital Identity Atlas V500.1
 
-Release statica e autonoma della landing interattiva **V500.0 Beta Preview**. Questa copia è aggiunta come sottoprogetto del repository Web esistente e non sostituisce le pagine correnti.
+Release statica responsive e autonoma come sezione aggiuntiva, mantenuta distinta dalla homepage esistente.
 
 ## Pubblicazione
 
-- Percorso nel sito Netlify: `/identity-atlas-v500/`
-- Sorgente prevista: cartella pubblica `docs`
-- Build: nessun framework o build command necessario; HTML statico autonomo
-- File principale: `index.html`
-- Tema iniziale: **Soft Minimal Light**
-- Tema alternativo: **Dark Black AMOLED**
-- Ritratto e favicon: incorporati nel file HTML standalone
+- Percorso: `/identity-atlas-v500/`
+- Landing: `index.html`
+- CSS e JavaScript locali: `atlas.css`, `atlas.js`
+- Ritratto fotografico autentico e anteprima social: `portrait.jpg`
+- Nessun framework o passaggio di build richiesto.
+- Tema iniziale Soft Minimal Light; alternativa Dark Black AMOLED.
 
-## Ambiti editoriali
+## Contenuto e separazione editoriale
 
-- Identità personale e professionale di Salvatore Sinatra
-- Portfolio e opere visive fotografiche
-- **Assemblage 23:** `assemblage23.com` è il sito internazionale ufficiale della band; `assemblage23.it` è il progetto editoriale italiano dedicato alla band
-- **The Birthday Massacre:** `thebirthdaymassacre-italia.it` è il progetto editoriale italiano dedicato alla band canadese; il riferimento internazionale è `thebirthdaymassacre.com`
+La pagina organizza identità personale, fotografia, ricerca visiva, profili e directory. Assemblage 23 Italia e The Birthday Massacre Italia sono indicati come progetti editoriali italiani indipendenti, distinti dai siti internazionali ufficiali. Non vengono dichiarate affiliazioni non documentate.
 
-I progetti musicali italiani sono separati dall'identità personale e dal portfolio fotografico. Non vengono dichiarate affiliazioni o approvazioni ufficiali non documentate. I marchi, le copertine, le fotografie e i contenuti di terzi restano soggetti ai diritti dei rispettivi titolari.
+## SEO, prestazioni e sicurezza
 
-## Standard tecnici
+- Canonical, robots, Open Graph, Twitter Card e dati strutturati Schema.org.
+- Immagine del ritratto esternalizzata in un file JPEG riutilizzabile, non duplicata nel markup.
+- CSS e JavaScript serviti come asset locali per consentire una Content Security Policy restrittiva.
+- Sitemap Netlify dedicata al solo URL canonico V500; il sitemap GitHub Pages mantiene il proprio host.
+- Le otto dichiarazioni di stile inline sono convertite in classi CSS.
+- Link esterni con protezioni `noopener noreferrer` dove previsti; nessun token o credenziale inclusa.
 
-HTML/CSS/JavaScript senza dipendenze di build; navigazione accessibile, menu a tendina, schede di profilo, ricerca e filtri, note espandibili, comandi di copia e selettore temi persistente. La galleria fotografica CDN è un embed remoto: la sua visualizzazione dipende dal server sorgente e non sostituisce un archivio locale.
+## Diritti
 
-## Naming consigliato per una repository dedicata
+© 2026 Salvatore Sinatra per i contenuti originali propri. I materiali e i marchi di terzi restano dei rispettivi titolari. Nessuna licenza open-source viene assegnata automaticamente.
 
-`salvatore-sinatra-digital-identity-atlas`
+## Prossima integrazione
 
-Descrizione: *Personal digital identity hub, responsive editorial landing and interactive portfolio index. Static HTML release V500.0 Beta Preview.*
-
-Nome neutro e descrittivo, senza “official” o nomi di band nel nome della repository. Copyright: © 2026 Salvatore Sinatra per i contenuti originali propri; componenti, marchi e materiali di terzi rimangono dei rispettivi titolari. Nessuna licenza open-source è assegnata automaticamente da questa release.
+La versione destinata al sito personale ufficiale viene pubblicata separatamente nel repository di produzione, sotto lo stesso percorso, senza sostituire la homepage. La raggiungibilità del dominio `www` e il certificato TLS devono essere verificati end-to-end sul provider.
