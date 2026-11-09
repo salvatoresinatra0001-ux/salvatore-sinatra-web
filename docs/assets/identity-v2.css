@@ -56,3 +56,28 @@ body[data-theme="light"] .action:hover{color:#fff}
 body[data-theme="light"] .theme-toggle:hover{color:var(--fg)}
 body[data-theme="light"] nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-underline-offset:5px}
 body[data-theme="light"] a:focus-visible,body[data-theme="light"] button:focus-visible{outline-color:var(--fg)}
+
+/* Responsive Extended V14 — shared identity and Atlas preview layer. */
+:where(.identity-grid,.identity-split,.columns,.list-row,.global-explore-inner) > *{min-width:0}
+:where(.identity-feature,.panel,.list-row,#contatti-unificati a){overflow-wrap:anywhere}
+:where(img,video,iframe){max-width:100%}
+@media (min-width:1800px){
+  .wrap{max-width:1840px;width:90%}
+  .identity-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,1.8vw,40px)}
+  .identity-feature,.identity-feature:nth-child(3n){grid-column:auto}
+  .identity-split{grid-template-columns:minmax(0,.95fr) minmax(0,1.6fr)}
+  .hero{padding-block:clamp(120px,9vw,220px)}
+}
+@media (min-width:3000px){
+  .wrap{max-width:2160px;width:88%}
+}
+@media (max-width:760px){
+  .global-explore-inner{row-gap:14px}
+  .identity-split{grid-template-columns:1fr}
+  #contatti-unificati{box-sizing:border-box;width:calc(100% - 28px)}
+}
+@media (max-width:420px){
+  .identity-feature{padding:clamp(18px,5vw,28px)}
+  .hero h1{font-size:clamp(2.65rem,11.5vw,4.2rem)}
+  .bar .nav{flex-wrap:wrap;row-gap:10px}
+}
