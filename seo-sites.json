@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-10-19",
+  "updated": "2026-11-20",
   "purpose": "Read-only SEO audit inventory. Values describe target roots and intended site roles, not verified DNS, indexing, or production health.",
   "policy": {
     "mode": "audit_only",
@@ -19,11 +19,11 @@
       "publish_root": ".",
       "robots": "robots.txt",
       "sitemap": "sitemap.xml",
-      "public_url": "https://salvatoresinatra-production.netlify.app/",
+      "public_url": "https://www.salvatoresinatra.it/",
       "canonical_candidate": "https://www.salvatoresinatra.it/",
-      "status": "domain_not_certified",
+      "status": "netlify_git_production_ready_2026-11-17",
       "audit": true,
-      "note": "Main identity source; check current canonical against the active production domain before any change."
+      "note": "Independent primary identity site. Netlify production deploy 6afbe8de750b06b56a987eff uses Git branch main and commit afe8f355971095cc140b7a9d8c4a4b29c4b54f85; latest static quality gate passed. HTTPS www returns production responses; apex and HTTP variants return 301. robots.txt and sitemap.xml return 200. Certificate chain not independently inspected."
     },
     {
       "name": "Salvatore Sinatra — Italian V10 archive",
@@ -34,9 +34,9 @@
       "sitemap": "sitemap.xml",
       "public_url": "https://www.salvatore-sinatra.it/",
       "canonical_candidate": "https://www.salvatore-sinatra.it/",
-      "status": "domain_to_verify",
+      "status": "github_pages_production_deploy_success_2026-11-20",
       "audit": true,
-      "note": "Distinct hyphenated domain; preserve as separate property unless a deliberate migration is approved."
+      "note": "Independent hyphenated identity site. CNAME and canonical use www.salvatore-sinatra.it. Latest commit 23fac2c4f294f939756702faa77afeba04d4890c; GitHub Pages deployment succeeded on 2026-11-20. Keyboard skip link added in this commit. Public page and biography are retrievable over HTTPS; robots.txt and sitemap.xml exist in source. Apex redirect and certificate chain not independently tested."
     },
     {
       "name": "Salvatore Sinatra — Web / Identity archive",
@@ -60,9 +60,9 @@
       "sitemap": "sitemap.xml",
       "public_url": "https://www.salvatoresinatraphotography.it/",
       "canonical_candidate": "https://www.salvatoresinatraphotography.it/",
-      "status": "domain_to_verify",
+      "status": "github_pages_production_deploy_success_2026-11-19",
       "audit": true,
-      "note": "Repository canonical currently points to this domain; other photography domains/projects also exist and require a domain ownership/role map."
+      "note": "Independent photography .it site. CNAME and canonical use www.salvatoresinatraphotography.it. Latest commit 53a3588ed764caad1d71e5e9d2097646869a023d; Pages and publish workflows succeeded on 2026-11-19. Public homepage and biography are retrievable over HTTPS; 14 image assets and local references verified in repository. robots.txt and sitemap.xml exist in source; certificate chain not independently inspected."
     },
     {
       "name": "Salvatore Sinatra — GitHub Pages identity hub",
@@ -274,9 +274,9 @@
       "sitemap": null,
       "public_url": "https://www.salvatoresinatraphotography.net",
       "canonical_candidate": null,
-      "status": "deployment_source_unmapped",
+      "status": "netlify_manual_drop_ready_no_git_source",
       "audit": false,
-      "note": "Separate Netlify property from the .it and .online photography domains. Identify source/ref and decide if this is an intentional independent site or a duplicate deployment."
+      "note": "Independent Netlify project salvatore-sinatra-photography-net; current production deploy 6ad2f85bb72efe8ca0ca1a88 is ready (2026-10-17), deploy_source=drop, manual_deploy=true, no branch/commit_ref and no source zip. Do not merge with .online or .it and do not infer a shared repository. Googlebot received 404 for robots.txt; sitemap not verified. Deploy summary lists curriculum.html and biografia.html; exact /documenti/ routes were not retrievable in the browser check. Do not publish curriculum contents in this registry."
     },
     {
       "name": "Salvatore Sinatra Photography .online — Netlify",
@@ -287,9 +287,9 @@
       "sitemap": null,
       "public_url": "https://www.salvatoresinatraphotography.online",
       "canonical_candidate": null,
-      "status": "deployment_source_unmapped",
+      "status": "netlify_manual_drop_ready_no_git_source",
       "audit": false,
-      "note": "Separate Netlify property. Identify source/ref and intended role relative to .it and .net before aligning canonicals or redirects."
+      "note": "Independent Netlify project salvatore-sinatra-photography; current production deploy 6adc1f67c688aab954733438 is ready (2026-10-24), deploy_source=drop, manual_deploy=true, no branch/commit_ref and no source zip. Do not merge with .net or .it and do not infer a shared repository. Googlebot received 404 for robots.txt; sitemap not verified."
     },
     {
       "name": "Salvatore Sinatra — Fine Art Authorial Photography (Webflow)",
@@ -323,6 +323,19 @@
           "og_image_present": true
         }
       ]
+    },
+    {
+      "name": "LuceVision — independent Netlify API deployment",
+      "repository": null,
+      "ref": null,
+      "publish_root": null,
+      "robots": "robots.txt",
+      "sitemap": "sitemap.xml",
+      "public_url": "https://www.lucevision.it/",
+      "canonical_candidate": "https://www.lucevision.it/",
+      "status": "netlify_api_deploy_ready_no_git_commit",
+      "audit": false,
+      "note": "Independent Netlify project lucevision-web; current production deploy 6adc16da787b33fdaa82017a is ready (2026-10-24), deploy_source=api, no branch or commit_ref, source zip available. robots.txt returned 200 and sitemap.xml returned 304 in the last 24 hours. The docs/lucevision copy in salvatore-sinatra-web has a separate GitHub Pages canonical and is not confirmed as this production site's source."
     }
   ]
 }
